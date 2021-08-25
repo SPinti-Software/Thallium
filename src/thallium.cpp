@@ -20,19 +20,12 @@
 sg_pass_action pass_action;
 
 
-static void Test() {
+static void layoutGlobalTest() {
   litehtml::context ctx;
   container_test container;
   litehtml::document::ptr doc = litehtml::document::createFromString(_t("<html>Body</html>"), &container, &ctx);
   doc->render(50, litehtml::render_all);
 }
-
-void layoutGlobalTest() {
-  Test();
-}
-
-
-
 
 
 

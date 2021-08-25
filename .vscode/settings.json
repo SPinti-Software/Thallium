@@ -3,6 +3,7 @@
         "*.bas": "vb",
         "*.bi": "vb",
         "*.cw": "cpp",
-        "html.h": "c"
+        "html.h": "c",
+        "utility": "cpp"
     }
 }
