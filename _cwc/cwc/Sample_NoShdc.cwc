@@ -3,7 +3,7 @@
 >
 -{sFileExt}:=c
 >
--c {sSample}.{sFileExt} -o {pObj}{sSample}.o
+-c src/{sSample}.{sFileExt} -o {pObj}{sSample}.o
 -DSOKOL_IMPL
 -{vSokolFlag}
 -{vIncl}

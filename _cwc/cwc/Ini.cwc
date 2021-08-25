@@ -12,11 +12,11 @@
 >
 -{sFolder}={_sPlatform}_{_sOpt}_{sToolChainType}
 >
--{pObj}=_out/obj/{sSample}/{sFolder}/
+-{pObj}=obj/{sSample}/{sFolder}/
 >
--{pOut}:=_out/{sSample}/{sFolder}/
+-{pOut}:=./
 >
--{vIncl}=-I {pSokol} -I libs/ -I {pSokol}util/
+-{vIncl}=-I {pSokol} -I {pSokol}/libs/ -I {pSokol}util/
 ;-DSOKOL_WGPU //Already defined
 >
 -{vFlag}=""
