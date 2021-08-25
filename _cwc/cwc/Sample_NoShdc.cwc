@@ -1,7 +1,8 @@
 >
 -#Run _cwc/cwc/Ini.cwc
 >
--{sFileExt}:=c
+-{sFileExt}:=cpp
+;-{sFileExt}:=c
 >
 -c src/{sSample}.{sFileExt} -o {pObj}{sSample}.o
 -DSOKOL_IMPL

@@ -1,4 +1,4 @@
-obj/thallium/Windows_Debug_wasm/thallium.o: src/thallium.c \
+obj/thallium/Windows_Debug_wasm/thallium.o: src/thallium.cpp \
  sokol/sokol_app.h \
  C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/lib/gcc/i686-w64-mingw32/8.1.0/include/stdint.h \
  C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/i686-w64-mingw32/include/stdint.h \
@@ -16,12 +16,18 @@ obj/thallium/Windows_Debug_wasm/thallium.o: src/thallium.c \
  C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/i686-w64-mingw32/include/sec_api/string_s.h \
  C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/i686-w64-mingw32/include/winapifamily.h \
  C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/i686-w64-mingw32/include/assert.h \
+ C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/stdlib.h \
+ C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/cstdlib \
+ C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/c++config.h \
+ C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/os_defines.h \
+ C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/cpu_defines.h \
  C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/i686-w64-mingw32/include/stdlib.h \
  C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed/limits.h \
  C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed/syslimits.h \
  C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/i686-w64-mingw32/include/limits.h \
  C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/i686-w64-mingw32/include/sec_api/stdlib_s.h \
  C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/i686-w64-mingw32/include/malloc.h \
+ C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/std_abs.h \
  C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/include/stdio.h \
  C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/i686-w64-mingw32/include/stdio.h \
  C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/i686-w64-mingw32/include/_mingw_print_push.h \
@@ -116,4 +122,4 @@ obj/thallium/Windows_Debug_wasm/thallium.o: src/thallium.c \
  C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/i686-w64-mingw32/include/float.h \
  sokol/sokol_time.h sokol/sokol_glue.h sokol/util/sokol_debugtext.h \
  sokol/libs/dbgui/dbgui.h
-Cwc:VLianceTool/LibRT Default gcc (12/05/2018 11:31:37) >> -std=gnu99 -ggdb -m32 -MD   	-Werror=implicit-function-declaration  	-Werror=int-conversion  	-Werror=incompatible-pointer-types -DDsToolchain="VLianceTool_LibRT" -DDsPlatform="Windows" -DD_Platform_Windows -DDsPlatform_File="Default" -DD_Debug -DDsOpt="Debug" -c src/thallium.c -o obj/thallium/Windows_Debug_wasm/thallium.o -DSOKOL_IMPL -DSOKOL_GLCORE33 -fno-exceptions -fno-rtti -I sokol/ -I sokol//libs/ -I sokol/util/ -I"C:/Users/favie/Desktop/Thallium/" -I"C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/i686-w64-mingw32/include/" -I"C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/i686-w64-mingw32/include/c++/" -I"C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/i686-w64-mingw32/include/c++/backward/" -I"C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/include/" -I"C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/pthreads/"
+Cwc:VLianceTool/LibRT Default g++ (12/05/2018 11:31:08) >> -ggdb -m32 -MD -DDsToolchain="VLianceTool_LibRT" -DDsPlatform="Windows" -DD_Platform_Windows -DDsPlatform_File="Default" -DD_Debug -DDsOpt="Debug" -c src/thallium.cpp -o obj/thallium/Windows_Debug_wasm/thallium.o -DSOKOL_IMPL -DSOKOL_GLCORE33 -fno-exceptions -fno-rtti -I sokol/ -I sokol//libs/ -I sokol/util/ -I"C:/CPCDOS/Thallium/" -I"C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/i686-w64-mingw32/include/" -I"C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/i686-w64-mingw32/include/c++/" -I"C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/i686-w64-mingw32/include/c++/backward/" -I"C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/include/" -I"C:/CPCDOS/Cwc/Toolchain/VLianceTool/LibRT/LibRT-8.0.7/pthreads/"
