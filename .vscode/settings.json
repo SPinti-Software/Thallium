@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.bas": "vb",
+        "*.bi": "vb",
+        "*.cw": "cpp",
+        "html.h": "c"
+    }
+}

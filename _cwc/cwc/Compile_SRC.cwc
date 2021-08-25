@@ -1,10 +1,7 @@
 >
 -#Run _cwc/cwc/Ini.cwc
 >
--{sFileExt}:=cpp
-;-{sFileExt}:=c
->
--c src/{sSample}.{sFileExt} -o {pObj}{sSample}.o
+-c src/ -o {pObj}
 -DSOKOL_IMPL
 -{vSokolFlag}
 -{vIncl}

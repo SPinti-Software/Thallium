@@ -1,0 +1,4 @@
+>
+; Launch compilation
+-#Run _cwc/cwc/Compile_LIB.cwc
+>

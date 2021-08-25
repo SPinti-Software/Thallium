@@ -1,0 +1,17 @@
+>
+-#Run _cwc/cwc/Ini.cwc
+>
+-c {pSokol}/libs/litehtml/ -o {pObj}
+-DSOKOL_IMPL
+-{sToolChainName}
+-{vIncl}
+-{vExIncl}
+-{vFlag}
+>
+-c {pSokol}/libs/gumbo/ -o {pObj}
+-DSOKOL_IMPL
+-{sToolChainName}
+-{vIncl}
+-{vExIncl}
+-{vFlag}
+>

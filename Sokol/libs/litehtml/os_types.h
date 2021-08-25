@@ -3,6 +3,7 @@
 
 namespace litehtml
 {
+/**
 #if defined( WIN32 ) || defined( WINCE )
 
 #ifndef LITEHTML_UTF8
@@ -56,6 +57,7 @@ namespace litehtml
 	#endif
 
 #else
+**/
 	#define LITEHTML_UTF8
 
 	typedef std::string			tstring;
@@ -80,7 +82,7 @@ namespace litehtml
 	#define t_tolower			tolower
 	#define t_isdigit			isdigit
 
-#endif
+// #endif
 }
 
 #endif  // LH_OS_TYPES_H

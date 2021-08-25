@@ -1,9 +1,12 @@
 ;Register Cwc before using a .cwmake
 >
--{sSample}=thallium
+; Executable name
+-{exeName}=Thallium
 >
--#Run _cwc/cwc/Sample_NoShdc.cwc
+; Launch compilation
+-#Run _cwc/cwc/Compile_SRC.cwc
 >
+; Link obj to exe
 -#Run _cwc/cwc/Link.cwc
 >
 ;-#Run

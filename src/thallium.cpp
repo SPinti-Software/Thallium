@@ -7,14 +7,34 @@
 
 
 // HTML-lite
-/*
 #include <iostream>
+
+#include "litehtml/html.h"
+
 #include "litehtml/os_types.h"
 #include "litehtml/types.h"
 #include "litehtml/context.h"
 #include "litehtml/document.h"
-*/
+#include "container_test.h"
+
 sg_pass_action pass_action;
+
+
+static void Test() {
+  litehtml::context ctx;
+  container_test container;
+  litehtml::document::ptr doc = litehtml::document::createFromString(_t("<html>Body</html>"), &container, &ctx);
+  doc->render(50, litehtml::render_all);
+}
+
+void layoutGlobalTest() {
+  Test();
+}
+
+
+
+
+
 
 void init(void) {
 
@@ -33,6 +53,10 @@ void init(void) {
     __dbgui_setup(sapp_sample_count());
 
     printf(" init() [OK]\n");
+
+    layoutGlobalTest();
+
+
 }
 
 void frame(void) {
