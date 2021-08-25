@@ -1,0 +1,12 @@
+>
+-#Run _cwc/cwc/Ini.cwc
+>
+-{sFileExt}:=c
+>
+-c {sSample}.{sFileExt} -o {pObj}{sSample}.o
+-DSOKOL_IMPL
+-{vSokolFlag}
+-{vIncl}
+-{vExIncl}
+-{vFlag}
+>
