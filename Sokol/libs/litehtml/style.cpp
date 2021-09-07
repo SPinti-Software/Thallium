@@ -6,7 +6,10 @@
 #include <locale>
 #endif
 
-
+litehtml::string_map litehtml::style::m_valid_values =
+{
+	{ _t("white-space"), white_space_strings }
+};
 
 litehtml::style::style()
 {
@@ -25,7 +28,7 @@ litehtml::style::~style()
 void litehtml::style::parse( const tchar_t* txt, const tchar_t* baseurl )
 {
 	std::vector<tstring> properties;
-	split_string(txt, properties, _t(";"));
+	split_string(txt, properties, _t(";"), _t(""), _t("\"'"));
 
 	for(std::vector<tstring>::const_iterator i = properties.begin(); i != properties.end(); i++)
 	{
@@ -38,13 +41,11 @@ void litehtml::style::parse_property( const tstring& txt, const tchar_t* baseurl
 	tstring::size_type pos = txt.find_first_of(_t(":"));
 	if(pos != tstring::npos)
 	{
-		tstring name	= txt.substr(0, pos);
+		tstring name = txt.substr(0, pos);
 		tstring val	= txt.substr(pos + 1);
 
-		trim(name);
+		trim(name); lcase(name);
 		trim(val);
-
-		lcase(name);
 
 		if(!name.empty() && !val.empty())
 		{
@@ -57,13 +58,7 @@ void litehtml::style::parse_property( const tstring& txt, const tchar_t* baseurl
 			{
 				trim(vals[0]);
 				lcase(vals[1]);
-				if(vals[1] == _t("important"))
-				{
-					add_property(name.c_str(), vals[0].c_str(), baseurl, true);
-				} else
-				{
-					add_property(name.c_str(), vals[0].c_str(), baseurl, false);
-				}
+				add_property(name.c_str(), vals[0].c_str(), baseurl, vals[1] == _t("important"));
 			}
 		}
 	}
@@ -101,12 +96,12 @@ void litehtml::style::add_property( const tchar_t* name, const tchar_t* val, con
 		split_string(val, tokens, _t(" "));
 		if(tokens.size() == 1)
 		{
-			add_property(_t("-litehtml-border-spacing-x"), tokens[0].c_str(), baseurl, important);
-			add_property(_t("-litehtml-border-spacing-y"), tokens[0].c_str(), baseurl, important);
+			add_parsed_property(_t("-litehtml-border-spacing-x"), tokens[0].c_str(), important);
+			add_parsed_property(_t("-litehtml-border-spacing-y"), tokens[0].c_str(), important);
 		} else if(tokens.size() == 2)
 		{
-			add_property(_t("-litehtml-border-spacing-x"), tokens[0].c_str(), baseurl, important);
-			add_property(_t("-litehtml-border-spacing-y"), tokens[1].c_str(), baseurl, important);
+			add_parsed_property(_t("-litehtml-border-spacing-x"), tokens[0].c_str(), important);
+			add_parsed_property(_t("-litehtml-border-spacing-y"), tokens[1].c_str(), important);
 		}
 	} else
 
@@ -312,7 +307,7 @@ void litehtml::style::add_property( const tchar_t* name, const tchar_t* val, con
 			add_property(_t("border-bottom-left-radius-y"),	tokens[3].c_str(), baseurl, important);
 		}
 	}
-	
+	else
 
 	// Parse list-style shorthand properties 
 	if(!t_strcmp(name, _t("list-style")))
@@ -612,8 +607,6 @@ void litehtml::style::parse_short_font( const tstring& val, bool important )
 
 void litehtml::style::add_parsed_property( const tstring& name, const tstring& val, bool important )
 {
-	litehtml::string_map m_valid_values = { { _t("white-space"), white_space_strings }}; //TODO not optimal --> Const?
-		
 	bool is_valid = true;
 	string_map::iterator vals = m_valid_values.find(name);
 	if (vals != m_valid_values.end())

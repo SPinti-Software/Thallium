@@ -5,27 +5,28 @@
 #include "sokol_debugtext.h"
 #include "dbgui/dbgui.h"
 
-
-// HTML-lite
-#include <iostream>
-
-#include "litehtml/html.h"
-
-#include "litehtml/os_types.h"
-#include "litehtml/types.h"
-#include "litehtml/context.h"
-#include "litehtml/document.h"
-#include "container_test.h"
-
 sg_pass_action pass_action;
 
 
-static void layoutGlobalTest() {
+// HTML-lite
+#include <iostream>
+#include <assert.h>
+
+#include "litehtml.h"
+#include "win32_container.h"
+
+
+extern const litehtml::tchar_t master_css[] = 
+{
+#include "master.css.inc"
+};
+
+/**
+static void Test() {
   litehtml::context ctx;
-  container_test container;
-  litehtml::document::ptr doc = litehtml::document::createFromString(_t("<html>Body</html>"), &container, &ctx);
-  doc->render(50, litehtml::render_all);
+  ctx.load_master_stylesheet(master_css);
 }
+**/
 
 
 
@@ -47,7 +48,7 @@ void init(void) {
 
     printf(" init() [OK]\n");
 
-    layoutGlobalTest();
+    Test();
 
 
 }

@@ -98,10 +98,7 @@ void litehtml::split_string(const tstring& str, string_vector& tokens, const tst
 		return;
 	}
 
-	//tstring all_delims = delims + delims_preserve + quote;
-	tstring all_delims = delims;
-	 all_delims += delims_preserve;
-	 all_delims += quote;
+	tstring all_delims = delims + delims_preserve + quote;
 
 	tstring::size_type token_start	= 0;
 	tstring::size_type token_end	= str.find_first_of(all_delims, token_start);

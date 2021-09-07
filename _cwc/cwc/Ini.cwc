@@ -16,7 +16,7 @@
 >
 -{pOut}:=./
 >
--{vIncl}=-I {pSokol} -I {pSokol}/libs/ -I {pSokol}util/
+-{vIncl}=-I {pSokol} -I {pSokol}/libs/ -I {pSokol}util/ -I {pSokol}/libs/litehtml/ -I {pSokol}/libs/gumbo/
 ;-DSOKOL_WGPU //Already defined
 >
 -{vFlag}=""

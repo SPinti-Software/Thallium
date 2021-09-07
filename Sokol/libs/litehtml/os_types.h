@@ -3,8 +3,9 @@
 
 namespace litehtml
 {
+	
 /**
-#if defined( WIN32 ) || defined( WINCE )
+#if defined( WIN32 ) || defined( _WIN32 ) || defined( WINCE )
 
 #ifndef LITEHTML_UTF8
 
@@ -26,6 +27,7 @@ namespace litehtml
 	#define t_strstr			wcsstr
 	#define t_tolower			towlower
 	#define t_isdigit			iswdigit
+	#define t_to_string(val)	std::to_wstring(val)
 
 #else
 
@@ -47,6 +49,7 @@ namespace litehtml
 	#define t_strstr			strstr
 	#define t_tolower			tolower
 	#define t_isdigit			isdigit
+	#define t_to_string(val)	std::to_string(val)
 
 #endif
 
@@ -62,7 +65,7 @@ namespace litehtml
 
 	typedef std::string			tstring;
 	typedef char				tchar_t;
-	typedef void*				uint_ptr;
+	typedef std::uintptr_t			uint_ptr;
 	typedef std::stringstream	tstringstream;
 
 	#define _t(quote)			quote
@@ -81,8 +84,11 @@ namespace litehtml
 	#define t_strstr			strstr
 	#define t_tolower			tolower
 	#define t_isdigit			isdigit
+	#define t_to_string(val)	std::to_string(val)
 
-// #endif
+/** 
+#endif
+**/
 }
 
 #endif  // LH_OS_TYPES_H
